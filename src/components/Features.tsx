@@ -44,14 +44,14 @@ const Features = () => {
             What We Offer
           </h2>
           <p className="text-xl text-body max-w-3xl mx-auto">
-            At ClosedLoop, we provide a fully integrated suite of services designed to support artists, 
+            At ClosedLoop, we provide a fully integrated suite of services designed to support artists,
             brands, and event organizers at every stage of their journey.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div 
+            <div
               key={index}
               className="card-clean group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -65,7 +65,7 @@ const Features = () => {
           ))}
         </div>
 
-        <div className="mt-20 bg-gray-50 rounded-2xl p-12 text-center border border-gray-200 hover:border-gray-300 transition-all duration-300">
+        {/*<div className="mt-20 bg-gray-50 rounded-2xl p-12 text-center border border-gray-200 hover:border-gray-300 transition-all duration-300">
           <h3 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-heading">
             Ready to Loop Into the Future?
           </h3>
@@ -75,7 +75,7 @@ const Features = () => {
           <div className="flex justify-center">
             <button className="btn-primary cursor-loop">Get Started</button>
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

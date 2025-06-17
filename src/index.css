@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,7 +42,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
@@ -53,47 +53,51 @@
   .text-primary-blue {
     color: #3b82f6;
   }
+
   .bg-primary-blue {
     background-color: #3b82f6;
   }
+
   .border-primary-blue {
     border-color: #3b82f6;
   }
+
   .hover\:bg-primary-blue:hover {
     background-color: #3b82f6;
   }
+
   .hover\:text-primary-blue:hover {
     color: #3b82f6;
   }
-  
+
   /* Clean button styles */
   .btn-primary {
     @apply bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2;
   }
-  
+
   .btn-secondary {
     @apply bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-gray-50 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
   }
-  
+
   /* Card styles */
   .card-clean {
     @apply bg-white rounded-xl border border-gray-200 p-8 transition-all duration-200 hover:shadow-lg hover:border-gray-300;
   }
-  
+
   /* Typography improvements */
   .text-heading {
     @apply font-semibold tracking-tight;
   }
-  
+
   .text-body {
     @apply text-gray-600 leading-relaxed;
   }
-  
+
   /* Layout utilities */
   .container-clean {
     @apply max-w-7xl mx-auto px-6 lg:px-8;
   }
-  
+
   .section-padding {
     @apply py-16 lg:py-24;
   }
@@ -122,15 +126,19 @@
   0% {
     transform: rotate(0deg) scale(1);
   }
+
   25% {
     transform: rotate(90deg) scale(1.05);
   }
+
   50% {
     transform: rotate(180deg) scale(1);
   }
+
   75% {
     transform: rotate(270deg) scale(1.05);
   }
+
   100% {
     transform: rotate(360deg) scale(1);
   }
@@ -140,6 +148,7 @@
   0% {
     transform: rotate(0deg) scale(1.1);
   }
+
   100% {
     transform: rotate(360deg) scale(1.1);
   }
@@ -150,6 +159,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);

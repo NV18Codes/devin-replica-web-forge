@@ -34,25 +34,14 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd'%3e%3cg fill='%23ffffff' fill-opacity='0.05'%3e%3cpolygon points='30 0 45 15 45 45 30 60 15 45 15 15'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e")`,
-              backgroundSize: '60px 60px'
-            }}
-          />
-        </div>
-
+      {/* Hero Section - Dark */}
+      <section className="relative pt-32 pb-20 overflow-hidden bg-navy-900">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-black text-white mb-8">
-            About <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">ClosedLoop</span>
+            About <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">ClosedLoop</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             A premium artist and event management company built on the idea that every story deserves a perfect stage.
@@ -60,13 +49,13 @@ const About = () => {
         </div>
       </section>
 
-      {/* Who We Are Section */}
-      <section className="py-20 bg-gray-900/50">
+      {/* Who We Are Section - Light */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-white mb-8">Who We Are</h2>
-              <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+              <h2 className="text-4xl font-bold text-navy-900 mb-8">Who We Are</h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
                   ClosedLoop is a premium artist and event management company built on the idea that every story deserves a perfect stage. We specialise in crafting immersive experiences by connecting extraordinary talent with memorable moments, whether through live performances, curated events, or brand-driven activations.
                 </p>
@@ -76,7 +65,7 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-600/20 to-cyan-600/20 rounded-2xl p-8 border border-gray-700">
+              <div className="bg-gradient-to-br from-blue-600/20 to-navy-900/20 rounded-2xl p-8 border border-gray-200">
                 <img 
                   src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop" 
                   alt="Team collaboration" 
@@ -88,8 +77,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Initiative Section */}
-      <section className="py-20">
+      {/* Our Initiative Section - Dark */}
+      <section className="py-20 bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-8">Our Initiative</h2>
@@ -98,7 +87,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 rounded-2xl p-12 border border-gray-700">
+          <div className="bg-gradient-to-r from-gray-800/80 to-gray-700/80 rounded-2xl p-12 border border-gray-600">
             <p className="text-lg text-gray-300 leading-relaxed text-center">
               We believe in nurturing long-term relationships with both our clients and our talent, acting as a collaborative partner rather than just a service provider. Through ethical management, innovative planning, and deep cultural understanding, we create events that leave lasting impressions and performances that resonate far beyond the stage.
             </p>
@@ -106,32 +95,32 @@ const About = () => {
         </div>
       </section>
 
-      {/* Core Values Section */}
-      <section className="py-20 bg-gray-900/30">
+      {/* Core Values Section - Light */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-8">Our Core Values</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-navy-900 mb-8">Our Core Values</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               These principles guide every decision we make and every relationship we build.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg flex items-center justify-center mb-6">
+              <div key={index} className="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-navy-900 rounded-lg flex items-center justify-center mb-6">
                   <value.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{value.description}</p>
+                <h3 className="text-2xl font-bold text-navy-900 mb-4">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20">
+      {/* Why Choose Us Section - Dark */}
+      <section className="py-20 bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-8">Why Choose ClosedLoop?</h2>
@@ -139,14 +128,14 @@ const About = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-600 hover:border-blue-500/50 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">A Curated Network of Top-Tier Talent</h3>
                 <p className="text-gray-300">
                   We handpick and represent some of the most dynamic and diverse talent in the entertainment industry, from chart-topping musicians and electrifying emcees to skilled dancers and high-energy DJs.
                 </p>
               </div>
               
-              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-600 hover:border-blue-500/50 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">Hands-On Experience Across Diverse Event Types</h3>
                 <p className="text-gray-300">
                   Our team brings years of real-world experience in organising and managing a wide spectrum of events, from intimate gatherings to large-scale corporate events and public concerts.
@@ -155,14 +144,14 @@ const About = () => {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-600 hover:border-blue-500/50 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">One-Stop Destination</h3>
                 <p className="text-gray-300">
                   ClosedLoop offers a complete ecosystem for entertainment and event services under one roof. You don't need to juggle multiple vendors.
                 </p>
               </div>
               
-              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-600 hover:border-blue-500/50 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">A Passionate Team</h3>
                 <p className="text-gray-300">
                   We're not just planners, we're creators. Our team is made up of passionate individuals who thrive on creativity, collaboration, and delivering extraordinary experiences.

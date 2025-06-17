@@ -91,24 +91,14 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd'%3e%3cg fill='%23ffffff' fill-opacity='0.05'%3e%3cpolygon points='30 0 45 15 45 45 30 60 15 45 15 15'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e")`,
-              backgroundSize: '60px 60px'
-            }}
-          />
-        </div>
-
+      {/* Hero Section - Dark */}
+      <section className="relative pt-32 pb-20 overflow-hidden bg-navy-900">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-black text-white mb-8">
-            Our <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Services</span>
+            Our <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Services</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
             Crafted with Creativity. Delivered with Precision.
@@ -119,46 +109,48 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Grid with alternating colors */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
+          <div className="space-y-0">
             {services.map((service, index) => (
-              <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl flex items-center justify-center mr-4">
-                      <service.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h2 className="text-3xl font-bold text-white">{service.title}</h2>
-                    </div>
-                  </div>
-                  
-                  <p className="text-xl text-purple-300 font-semibold mb-4">{service.subtitle}</p>
-                  <p className="text-lg text-gray-300 mb-8 leading-relaxed">{service.description}</p>
-                  
-                  <div className="space-y-3">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <p className="text-gray-300">{feature}</p>
+              <div key={index} className={`py-20 ${index % 2 === 0 ? 'bg-white' : 'bg-navy-900'}`}>
+                <div className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-navy-900 rounded-xl flex items-center justify-center mr-4">
+                        <service.icon className="w-8 h-8 text-white" />
                       </div>
-                    ))}
+                      <div>
+                        <h2 className={`text-3xl font-bold ${index % 2 === 0 ? 'text-navy-900' : 'text-white'}`}>{service.title}</h2>
+                      </div>
+                    </div>
+                    
+                    <p className={`text-xl font-semibold mb-4 ${index % 2 === 0 ? 'text-blue-600' : 'text-blue-400'}`}>{service.subtitle}</p>
+                    <p className={`text-lg mb-8 leading-relaxed ${index % 2 === 0 ? 'text-gray-600' : 'text-gray-300'}`}>{service.description}</p>
+                    
+                    <div className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start">
+                          <div className={`w-2 h-2 rounded-full mr-3 mt-2 flex-shrink-0 ${index % 2 === 0 ? 'bg-blue-600' : 'bg-blue-400'}`}></div>
+                          <p className={index % 2 === 0 ? 'text-gray-600' : 'text-gray-300'}>{feature}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                
-                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="relative">
-                    <div className="bg-gradient-to-br from-purple-600/20 to-cyan-600/20 rounded-2xl p-8 border border-gray-700 backdrop-blur-sm">
-                      <img 
-                        src={index === 0 ? "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" :
-                             index === 1 ? "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=400&fit=crop" :
-                             index === 2 ? "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" :
-                             "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop"} 
-                        alt={service.title} 
-                        className="w-full h-80 object-cover rounded-xl"
-                      />
+                  
+                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                    <div className="relative">
+                      <div className={`rounded-2xl p-8 border ${index % 2 === 0 ? 'bg-gradient-to-br from-blue-600/20 to-navy-900/20 border-gray-200' : 'bg-gradient-to-br from-blue-600/20 to-gray-600/20 border-gray-600'} backdrop-blur-sm`}>
+                        <img 
+                          src={index === 0 ? "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" :
+                               index === 1 ? "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=400&fit=crop" :
+                               index === 2 ? "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" :
+                               "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop"} 
+                          alt={service.title} 
+                          className="w-full h-80 object-cover rounded-xl"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -168,33 +160,33 @@ const Services = () => {
         </div>
       </section>
 
-      {/* What We Offer Overview */}
-      <section className="py-20 bg-gray-900/50">
+      {/* What We Offer Overview - Light */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-8">What We Offer</h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-4xl font-bold text-navy-900 mb-8">What We Offer</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               At ClosedLoop, we provide a fully integrated suite of services designed to support artists, brands, and event organisers at every stage of their journey. Whether you're a rising talent or an established name, we create a continuous loop of creative growth, visibility, and opportunity.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700 text-center hover:border-purple-500/50 transition-all duration-300">
-              <Users className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-4">For Artists</h3>
-              <p className="text-gray-300">Comprehensive management, career development, and strategic positioning in the entertainment industry.</p>
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200 text-center hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg">
+              <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-navy-900 mb-4">For Artists</h3>
+              <p className="text-gray-600">Comprehensive management, career development, and strategic positioning in the entertainment industry.</p>
             </div>
             
-            <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700 text-center hover:border-cyan-500/50 transition-all duration-300">
-              <Calendar className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-4">For Events</h3>
-              <p className="text-gray-300">End-to-end event production, talent curation, and technical excellence for memorable experiences.</p>
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200 text-center hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg">
+              <Calendar className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-navy-900 mb-4">For Events</h3>
+              <p className="text-gray-600">End-to-end event production, talent curation, and technical excellence for memorable experiences.</p>
             </div>
             
-            <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700 text-center hover:border-pink-500/50 transition-all duration-300">
-              <Handshake className="w-12 h-12 text-pink-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-4">For Brands</h3>
-              <p className="text-gray-300">Strategic partnerships, authentic collaborations, and impactful campaigns that resonate with audiences.</p>
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200 text-center hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg">
+              <Handshake className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-navy-900 mb-4">For Brands</h3>
+              <p className="text-gray-600">Strategic partnerships, authentic collaborations, and impactful campaigns that resonate with audiences.</p>
             </div>
           </div>
         </div>

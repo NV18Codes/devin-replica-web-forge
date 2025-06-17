@@ -7,29 +7,26 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <div className="container-clean">
+        <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-black hover:text-gray-700 transition-all duration-300 font-inter">
+            <Link to="/" className="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors duration-200">
               ClosedLoop
             </Link>
           </div>
           
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-600 hover:text-black transition-all duration-300 font-medium relative group font-inter">
+          <nav className="hidden md:flex items-center space-x-1">
+            <Link to="/" className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium">
               Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link to="/about" className="text-gray-600 hover:text-black transition-all duration-300 font-medium relative group font-inter">
+            <Link to="/about" className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium">
               About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link to="/services" className="text-gray-600 hover:text-black transition-all duration-300 font-medium relative group font-inter">
+            <Link to="/services" className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium">
               Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link to="/contact" className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-all duration-300 font-medium font-inter">
+            <Link to="/contact" className="btn-primary ml-4">
               Contact
             </Link>
           </nav>
@@ -37,20 +34,20 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 hover:text-black transition-all duration-300"
+              className="p-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 py-4 animate-slide-down">
-            <nav className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-600 hover:text-black transition-all duration-300 font-medium font-inter">Home</Link>
-              <Link to="/about" className="text-gray-600 hover:text-black transition-all duration-300 font-medium font-inter">About</Link>
-              <Link to="/services" className="text-gray-600 hover:text-black transition-all duration-300 font-medium font-inter">Services</Link>
-              <Link to="/contact" className="text-gray-600 hover:text-black transition-all duration-300 font-medium font-inter">Contact</Link>
+          <div className="md:hidden border-t border-gray-200 py-4 animate-fade-in">
+            <nav className="flex flex-col space-y-2">
+              <Link to="/" className="px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium">Home</Link>
+              <Link to="/about" className="px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium">About</Link>
+              <Link to="/services" className="px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium">Services</Link>
+              <Link to="/contact" className="px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium">Contact</Link>
             </nav>
           </div>
         )}

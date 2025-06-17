@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Users, Star, Zap, Target, Heart, Rocket, Infinity } from 'lucide-react';
+import { Users, Star, Zap, Target, Heart, Rocket } from 'lucide-react';
 
 const Features = () => {
   const features = [
@@ -37,31 +37,13 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-gradient-to-b from-black via-gray-900/50 to-black relative overflow-hidden">
-      {/* Background infinity pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid grid-cols-8 gap-12 h-full w-full p-8">
-          {Array.from({ length: 32 }).map((_, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-center"
-            >
-              <Infinity 
-                size={32} 
-                className="text-white animate-infinity-spin" 
-                style={{ animationDelay: `${i * 0.2}s` }}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="section-padding bg-white">
+      <div className="container-clean">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent hover:from-cyan-400 hover:via-purple-400 hover:to-pink-400 transition-all duration-500 cursor-default animate-gradient">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 text-heading">
             What We Offer
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto hover:text-white transition-colors duration-300">
+          <p className="text-xl text-body max-w-3xl mx-auto">
             At ClosedLoop, we provide a fully integrated suite of services designed to support artists, 
             brands, and event organizers at every stage of their journey.
           </p>
@@ -71,27 +53,27 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-purple-500/50 hover:bg-gray-800/60 transition-all duration-500 transform hover:-translate-y-4 hover:scale-105 group cursor-pointer animate-pulse-glow"
+              className="card-clean group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="bg-gradient-to-br from-purple-500 to-cyan-500 text-white p-3 rounded-xl w-fit mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+              <div className="bg-gray-900 text-white p-3 rounded-xl w-fit mb-6 group-hover:bg-primary-blue transition-colors duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors duration-300">{feature.title}</h3>
-              <p className="text-gray-400 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900 text-heading">{feature.title}</h3>
+              <p className="text-body leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-20 bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-cyan-600/20 backdrop-blur-sm rounded-3xl p-12 text-center border border-gray-700 hover:border-purple-500/50 transition-all duration-500 group">
-          <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all duration-500">
+        <div className="mt-20 bg-gray-50 rounded-2xl p-12 text-center border border-gray-200 hover:border-gray-300 transition-all duration-300">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-heading">
             Ready to Loop Into the Future?
           </h3>
-          <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto group-hover:text-white transition-colors duration-300">
+          <p className="text-xl mb-8 text-body max-w-2xl mx-auto">
             Join the ClosedLoop ecosystem and experience the future of entertainment management.
           </p>
           <div className="flex justify-center">
-            <Infinity className="w-12 h-12 text-purple-400 animate-infinity-spin group-hover:text-cyan-400 transition-colors duration-300" />
+            <button className="btn-primary cursor-loop">Get Started</button>
           </div>
         </div>
       </div>

@@ -118,10 +118,10 @@ const Index = () => {
 
       {/* Accent Image for Landing Page */}
       <section className="bg-white flex justify-center py-8 animate-fade-in-up">
-        <img 
-          src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=900&h=300&fit=crop" 
-          alt="Creative audience" 
-          className="w-full max-w-3xl h-56 object-cover rounded-2xl shadow-xl border-4 border-blue-100 hover:border-blue-400 transition-all duration-300" 
+        <img
+          src="https://images.unsplash.com/photo-1710360683896-e0506fb3579a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Creative audience"
+          className="w-full max-w-3xl h-56 object-cover rounded-2xl shadow-xl border-4 border-blue-100 hover:border-blue-400 transition-all duration-300"
         />
       </section>
 

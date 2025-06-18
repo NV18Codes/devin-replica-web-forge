@@ -35,17 +35,17 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section - Unified with Services */}
       <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-black via-blue-900 to-black animate-fade-in">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 font-inter animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 font-inter animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             About <span className="text-blue-500">ClosedLoop</span>
           </h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed font-inter mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed font-inter mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             A premium artist and event management company built on the idea that every story deserves a perfect stage.
           </p>
-          <div className="flex items-center justify-center animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <div className="flex items-center justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <div className="relative group cursor-loop">
               <div className="animate-infinity-rotate group-hover:animate-infinity-rotate-fast">
                 <Infinity
@@ -81,10 +81,10 @@ const About = () => {
             </div>
             <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600&h=400&fit=crop" 
-                  alt="Creative team at work" 
-                  className="w-full h-64 object-cover rounded-xl shadow-xl border-4 border-blue-200 hover:border-blue-400 transition-all duration-300" 
+                <img
+                  src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=1147&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Creative team at work"
+                  className="w-full h-64 object-cover rounded-xl shadow-xl border-4 border-blue-200 hover:border-blue-400 transition-all duration-300"
                 />
               </div>
             </div>

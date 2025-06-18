@@ -40,17 +40,17 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section - Unified with About */}
       <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-black via-blue-900 to-black animate-fade-in">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 font-inter animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 font-inter animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             Our <span className="text-blue-500">Services</span>
           </h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed font-inter mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed font-inter mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             A comprehensive suite of <span className="text-blue-500">services</span> designed to elevate your <span className="text-blue-500">entertainment experience</span> and bring your vision to life.
           </p>
-          <div className="flex items-center justify-center animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <div className="flex items-center justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <div className="relative group cursor-loop">
               <div className="animate-infinity-rotate group-hover:animate-infinity-rotate-fast">
                 <Infinity
@@ -70,16 +70,16 @@ const Services = () => {
       </section>
 
       {/* Visual Accent Image for Services */}
-      <section className="bg-white flex justify-center py-8 animate-fade-in-up">
-        <img 
-          src="https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?w=900&h=300&fit=crop" 
-          alt="Live event production" 
-          className="w-full max-w-3xl h-56 object-cover rounded-2xl shadow-xl border-4 border-blue-100 hover:border-blue-400 transition-all duration-300" 
+      <section className="bg-white flex justify-center mt-14 py-8 animate-fade-in-up">
+        <img
+          src="https://images.unsplash.com/photo-1639682687092-0264e96cbb71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Live event production"
+          className="w-full max-w-3xl h-56 object-cover rounded-2xl shadow-xl border-4 border-blue-100 hover:border-blue-400 transition-all duration-300"
         />
       </section>
 
       {/* Services Grid - Light */}
-      <section className="py-24 bg-white animate-fade-in-up">
+      <section className="py-20 bg-white animate-fade-in-up">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {services.map((service, index) => (

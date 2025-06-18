@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -50,156 +49,127 @@ const Contact = () => {
       <Header />
       
       {/* Hero Section - Dark */}
-      <section className="relative pt-32 pb-24 overflow-hidden bg-black">
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-black via-blue-900 to-black animate-fade-in-up">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 font-inter">
             Get In <span className="text-blue-500">Touch</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12 font-inter">
-            Ready to bring your vision to life? Let's start a conversation about your next event, campaign, or creative project.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8 font-inter">
+            Ready to bring your <span className="text-blue-500">vision</span> to life? Let's start a conversation about your next <span className="text-blue-500">event</span>, <span className="text-blue-500">campaign</span>, or <span className="text-blue-500">creative project</span>.
           </p>
+          {/* 3D Infinity SVG visual */}
+          <div className="w-32 h-32 mx-auto animate-spin-slow mb-4">
+            <svg viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="infinity3d" x1="0" y1="0" x2="100" y2="50" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#60a5fa" />
+                  <stop offset="1" stopColor="#1e3a8a" />
+                </linearGradient>
+              </defs>
+              <path d="M10,25 Q25,0 50,25 Q75,50 90,25 Q75,0 50,25 Q25,50 10,25 Z" stroke="url(#infinity3d)" strokeWidth="6" fill="none" filter="url(#shadow)"/>
+              <filter id="shadow" x="-10" y="-10" width="120" height="70">
+                <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#60a5fa"/>
+              </filter>
+            </svg>
+          </div>
         </div>
       </section>
 
-      {/* Contact Form and Info - Light */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
-            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-              <h2 className="text-3xl font-bold text-black mb-8 font-inter">Send Us a Message</h2>
+      {/* Contact Form and Info - Enhanced */}
+      <section className="py-24 bg-gradient-to-br from-white via-blue-50 to-white animate-fade-in-up">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+          {/* Form Card */}
+          <div className="bg-white/90 rounded-2xl p-10 border-2 border-blue-100 shadow-2xl animate-fade-in-up">
+            <h2 className="text-3xl font-bold text-black mb-8 font-inter">Send Us a Message</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors font-inter"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors font-inter"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+              </div>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors font-inter"
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors font-inter"
-                      placeholder="your@email.com"
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
-                    Subject
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors font-inter"
-                    required
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="artist-management">Artist Management</option>
-                    <option value="event-production">Event Production</option>
-                    <option value="talent-booking">Talent Booking</option>
-                    <option value="brand-partnerships">Brand Partnerships</option>
-                    <option value="media-pr">Media & PR</option>
-                    <option value="general-inquiry">General Inquiry</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors resize-none font-inter"
-                    placeholder="Tell us about your project, event, or how we can help..."
-                    required
-                  ></textarea>
-                </div>
-                
-                <button
-                  type="submit"
-                  className="w-full bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-all duration-300 flex items-center justify-center space-x-3 text-lg font-medium shadow-lg hover:shadow-xl font-inter"
-                >
-                  <Send className="w-5 h-5" />
-                  <span>Send Message</span>
-                </button>
-              </form>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold text-black mb-8 font-inter">Let's Connect</h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-8 font-inter">
-                  Whether you're an artist looking for representation, a brand seeking creative partnerships, or an event organizer planning something extraordinary, we're here to help bring your vision to life.
-                </p>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
+                  Subject
+                </label>
+                <select
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors font-inter"
+                  required
+                >
+                  <option value="">Select a subject</option>
+                  <option value="artist-management">Artist Management</option>
+                  <option value="event-production">Event Production</option>
+                  <option value="talent-booking">Talent Booking</option>
+                  <option value="brand-partnerships">Brand Partnerships</option>
+                  <option value="media-pr">Media & PR</option>
+                  <option value="general-inquiry">General Inquiry</option>
+                </select>
               </div>
-
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-all duration-300">
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <info.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-black mb-2 font-inter">{info.title}</h3>
-                        <p className="text-blue-600 font-medium mb-2 font-inter">{info.info}</p>
-                        <p className="text-gray-600 font-inter">{info.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors resize-none font-inter"
+                  placeholder="Tell us about your project, event, or how we can help..."
+                  required
+                ></textarea>
               </div>
-
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center mb-4">
-                  <Clock className="w-6 h-6 text-black mr-3" />
-                  <h3 className="text-xl font-bold text-black font-inter">Business Hours</h3>
-                </div>
-                <div className="space-y-2 text-gray-600 font-inter">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p>Saturday: 10:00 AM - 4:00 PM</p>
-                  <p>Sunday: Closed</p>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center mb-4">
-                  <MessageCircle className="w-6 h-6 text-black mr-3" />
-                  <h3 className="text-xl font-bold text-black font-inter">Quick Response</h3>
-                </div>
-                <p className="text-gray-600 font-inter">
-                  We typically respond to all inquiries within 2-4 hours during business hours. For urgent matters, please call us directly.
-                </p>
-              </div>
-            </div>
+              
+              <button
+                type="submit"
+                className="w-full bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-all duration-300 flex items-center justify-center space-x-3 text-lg font-medium shadow-lg hover:shadow-xl font-inter"
+              >
+                <Send className="w-5 h-5" />
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+          {/* Decorative Accent Image (only on large screens) */}
+          <div className="hidden lg:flex items-center justify-center animate-fade-in-up">
+            <img 
+              src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=500&h=500&fit=crop" 
+              alt="Creative collaboration" 
+              className="w-full max-w-xs h-80 object-cover rounded-2xl shadow-xl border-4 border-blue-100 hover:border-blue-400 transition-all duration-300" 
+            />
           </div>
         </div>
       </section>

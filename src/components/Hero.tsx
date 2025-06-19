@@ -3,10 +3,10 @@ import { Infinity } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative mt-5 min-h-screen bg-gray-900 text-white">
-      <div className="container-clean px-6 py-20 mx-auto">
+    <section className="relative min-h-screen text-white bg-gray-900">
+      <div className="container-clean px-6 py-20 mx-auto flex flex-col justify-between min-h-screen">
         {/* Top Row: Text + Infinity Side by Side */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-15">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-10 flex-grow">
           {/* Left Side - Text */}
           <div className="space-y-6">
             <div
@@ -24,37 +24,33 @@ const Hero = () => {
             </p>
           </div>
 
+          {/* Right Side - Infinity Symbol */}
           <div className="flex items-center justify-center animate-fade-in" style={{ animationDelay: '0.8s' }}>
             <div className="relative group cursor-loop">
-              {/* Main rotating infinity with navy blue stroke and glow */}
               <div className="animate-infinity-rotate group-hover:animate-infinity-rotate-fast">
                 <Infinity
                   size={300}
                   className="transition-all duration-700 hover:scale-110"
                   style={{
-                    fill: 'transparent',                    // transparent inside
-                    stroke: '#60a5fa',                      // Tailwind's border-blue-400 hex
-                    strokeWidth: 2,                         // outline thickness
-                    filter: 'drop-shadow(0 0 30px #60a5fa)' // optional glow
+                    fill: 'transparent',
+                    stroke: '#60a5fa', // Tailwind's border-blue-400
+                    strokeWidth: 2,
+                    filter: 'drop-shadow(0 0 30px #60a5fa)',
                   }}
                 />
               </div>
             </div>
           </div>
-
-
         </div>
 
         {/* Bottom Row: Mission & Vision */}
         <div
           className="grid md:grid-cols-2 gap-10 animate-fade-in border-t border-blue-400 pt-12"
-          style={{ animationDelay: '0.8s' }}
+          style={{ animationDelay: '0.9s' }}
         >
           {/* Vision Block */}
           <div className="space-y-4 border border-blue-400 rounded-xl p-6">
-            <h2 className="text-2xl md:text-3xl font-semibold text-white">
-              Vision
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-white">Vision</h2>
             <p className="text-gray-300 text-lg leading-relaxed">
               To redefine Live Event space by creating a seamless loop between talent, opportunity, and audience experiences.
             </p>
@@ -65,9 +61,7 @@ const Hero = () => {
 
           {/* Mission Block */}
           <div className="space-y-4 border border-blue-400 rounded-xl p-6">
-            <h2 className="text-2xl md:text-3xl font-semibold text-white">
-              Mission
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-white">Mission</h2>
             <p className="text-gray-300 text-lg leading-relaxed">
               To empower talent through full-spectrum artist management, strategic partnerships, and immersive entertainment experiences.
               We believe we are the best end-to-end solution for live events with expertise and a world-class vision in Production, Promotion and Ticketing.

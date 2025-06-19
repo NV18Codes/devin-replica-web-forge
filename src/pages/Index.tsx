@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import CoreValuesCarousel from '../components/CoreValuesCarousel';
 import { Infinity, Users, Star, Target, Zap, Heart, Rocket, Award, Lightbulb } from 'lucide-react';
 
 const coreValues = [
@@ -83,84 +84,106 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] bg-gray-900 text-white flex flex-col justify-center items-center py-20 animate-fade-in-up">
-        <div className="container-clean grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
-              Welcome to ClosedLoop
+      <section className="relative h-screen bg-[#0a1f44]/95 text-white flex flex-col justify-center items-center animate-fade-in-up">
+        <div className="container-clean px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center w-full">
+
+          {/* Image Block */}
+          <div className="flex justify-center animate-fade-in">
+            <div className="relative w-[280px] sm:w-[300px] md:w-[340px] h-[260px] sm:h-[280px] md:h-[300px] group">
+              {/* Left Image */}
+              <img
+                src="https://images.unsplash.com/photo-1619067321513-bb55a012e9b2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 2"
+                className="absolute bottom-0 left-0 w-44 sm:w-52 md:w-60 h-64 sm:h-72 md:h-80 object-cover rounded-xl border border-blue-200 shadow-xl backdrop-blur-sm transition-all duration-300 group-hover:z-10 hover:z-20 hover:scale-105"
+                style={{
+                  transform: 'rotate(-6deg)',
+                  transformOrigin: 'bottom left',
+                  filter: 'drop-shadow(0 0 20px rgba(147, 197, 253, 0.4))'
+                }}
+              />
+
+              {/* Right Image */}
+              <img
+                src="https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image 1"
+                className="absolute bottom-0 right-0 w-44 sm:w-52 md:w-60 h-64 sm:h-72 md:h-80 object-cover rounded-xl border border-blue-200 shadow-xl backdrop-blur-sm transition-all duration-300 group-hover:z-10 hover:z-20 hover:scale-105"
+                style={{
+                  transform: 'rotate(6deg)',
+                  transformOrigin: 'bottom right',
+                  filter: 'drop-shadow(0 0 20px rgba(147, 197, 253, 0.4))'
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Text Block */}
+          <div className="space-y-6 px-4 sm:px-0 animate-fade-in text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl pt-10 text-white drop-shadow-lg font-thin">
+              Welcome to
             </h1>
-            <div className="text-2xl md:text-3xl font-semibold text-white drop-shadow-md">
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl mb-4 drop-shadow-lg font-thin text-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-100">
+                ClosedLoop
+              </span>
+            </h1>
+
+            <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-white drop-shadow-md">
               Looping Into the Future of Entertainment
             </div>
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
+
+            <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed">
               We're an entertainment powerhouse and artist management agency dedicated to elevating tomorrow's stars. From visionary amateurs to world-class performers, we represent, manage, and produce talent that moves audiences worldwide.
             </p>
-          </div>
-          <div className="flex items-center justify-center animate-fade-in">
-            <div className="relative group cursor-loop">
-              {/* Reverted: Main rotating infinity with navy blue stroke and glow */}
-              <div className="animate-infinity-rotate group-hover:animate-infinity-rotate-fast">
-                <Infinity
-                  size={300}
-                  className="transition-all duration-700 hover:scale-110"
-                  style={{
-                    fill: 'transparent',
-                    stroke: '#60a5fa',
-                    strokeWidth: 2,
-                    filter: 'drop-shadow(0 0 30px #60a5fa)'
-                  }}
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Accent Image for Landing Page */}
-      <section className="bg-white flex justify-center py-8 animate-fade-in-up">
-        <img
-          src="https://images.unsplash.com/photo-1710360683896-e0506fb3579a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Creative audience"
-          className="w-full max-w-3xl h-56 object-cover rounded-2xl shadow-xl border-4 border-blue-100 hover:border-blue-400 transition-all duration-300"
-        />
-      </section>
-
       {/* Vision & Mission - Light */}
-      <section className="section-padding bg-white animate-fade-in-up">
-        <div className="container-clean">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+      <section className="relative h-screen bg-white animate-fade-in-up flex items-center justify-center">
+        <div className="bg-blue-100 rounded-3xl p-6 sm:p-10 lg:p-14 shadow-md w-full">
+
+          {/* Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-blue-900">
               Our Vision & Mission
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-blue-700 max-w-3xl mx-auto">
               Empowering artists and creating unforgettable experiences through innovative entertainment solutions.
             </p>
           </div>
+
+          {/* Vision + Mission Cards */}
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-10 border border-blue-100 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl group animate-fade-in">
+            {/* Vision */}
+            <div className="bg-white rounded-2xl p-10 border border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl group">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300 shadow-lg">
                 <Target className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Vision</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-blue-800 leading-relaxed">
                 To be the leading force in shaping the future of entertainment, creating a world where talent knows no bounds and every story finds its perfect stage.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-10 border border-blue-100 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl group animate-fade-in">
+
+            {/* Mission */}
+            <div className="bg-white rounded-2xl p-10 border border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl group">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300 shadow-lg">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Mission</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-blue-800 leading-relaxed">
                 To discover, nurture, and elevate exceptional talent while delivering innovative entertainment solutions that captivate audiences and exceed expectations.
               </p>
             </div>
           </div>
+
         </div>
       </section>
 
+
       {/* Core Values - Dark */}
-      <section className="section-padding bg-gradient-to-br from-black via-blue-900 to-black animate-fade-in-up">
+      <section className="relative bg-[#0a1f44]/95 py-24 animate-fade-in-up overflow-hidden">
         <div className="container-clean">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
@@ -170,26 +193,13 @@ const Index = () => {
               Principles that guide every decision and relationship at ClosedLoop.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 justify-items-center">
-            {coreValues.map((value, index) => (
-              <div
-                key={index}
-                className="relative bg-gray-900 border-2 border-blue-800 rounded-3xl px-8 py-10 flex flex-col items-center shadow-lg hover:shadow-2xl transition-all duration-300 group animate-fade-in"
-                style={{ animationDelay: `${0.15 * index}s` }}
-              >
-                <div className="absolute inset-0 rounded-3xl bg-blue-900/20 opacity-60 -z-10 group-hover:opacity-80 transition-opacity duration-300" />
-                <div className="bg-gradient-to-br from-blue-400 via-blue-600 to-blue-400 text-white p-5 rounded-full mb-6 shadow-md group-hover:scale-110 group-hover:shadow-xl transition-transform duration-300">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-bold text-blue-200 mb-3 text-center tracking-tight">{value.title}</h3>
-                <p className="text-blue-100 text-base text-center mb-2">{value.description.split('. ')[0]}.</p>
-                <a href="/about" className="mt-2 text-blue-400 hover:text-blue-300 text-xs">Learn more</a>
-                <div className="absolute -inset-1 rounded-3xl border-2 border-transparent group-hover:border-blue-400 group-hover:shadow-[0_0_24px_0_rgba(59,130,246,0.25)] transition-all duration-300 pointer-events-none" />
-              </div>
-            ))}
-          </div>
+
+          <CoreValuesCarousel coreValues={coreValues} />
         </div>
       </section>
+
+
+
 
       {/* What We Offer / Services - Light */}
       <section className="section-padding bg-white animate-fade-in-up">

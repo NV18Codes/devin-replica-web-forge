@@ -1,8 +1,10 @@
-import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CoreValuesCarousel from '../components/CoreValuesCarousel';
+import WhyChooseClosedLoop from "../components/WhyChooseClosedLoop";
 import { Infinity, Users, Star, Target, Zap, Heart, Rocket, Award, Lightbulb } from 'lucide-react';
+import React, { useEffect, useState, useRef } from "react";
+import WhyCard from '../components/WhyCard';
 
 const coreValues = [
   {
@@ -84,7 +86,7 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative h-screen bg-[#0a1f44]/95 text-white flex flex-col justify-center items-center animate-fade-in-up">
+      <section className="relative h-screen bg-[#0a1f44]/95 text-white flex flex-col justify-center items-center animate-fade-in-up rounded-b-3xl">
         <div className="container-clean px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center w-full">
 
           {/* Image Block */}
@@ -141,10 +143,10 @@ const Index = () => {
 
       {/* Vision & Mission - Light */}
       <section className="relative h-screen bg-white animate-fade-in-up flex items-center justify-center">
-        <div className="bg-blue-100 rounded-3xl p-6 sm:p-10 lg:p-14 shadow-md w-full">
+        <div className=" rounded-3xl p-6 sm:p-10 lg:p-14 w-full">
 
           {/* Title */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 ">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-blue-900">
               Our Vision & Mission
             </h2>
@@ -154,9 +156,9 @@ const Index = () => {
           </div>
 
           {/* Vision + Mission Cards */}
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 ">
             {/* Vision */}
-            <div className="bg-white rounded-2xl p-10 border border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl group">
+            <div className="bg-blue-50 rounded-2xl p-10 border border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl group">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300 shadow-lg">
                 <Target className="w-8 h-8 text-white" />
               </div>
@@ -167,7 +169,7 @@ const Index = () => {
             </div>
 
             {/* Mission */}
-            <div className="bg-white rounded-2xl p-10 border border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl group">
+            <div className="bg-blue-50 rounded-2xl p-10 border border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl group">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300 shadow-lg">
                 <Award className="w-8 h-8 text-white" />
               </div>
@@ -183,7 +185,7 @@ const Index = () => {
 
 
       {/* Core Values - Dark */}
-      <section className="relative bg-[#0a1f44]/95 py-24 animate-fade-in-up overflow-hidden">
+      <section className="relative rounded-3xl bg-[#0a1f44]/95 py-24 animate-fade-in-up overflow-hidden">
         <div className="container-clean">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
@@ -234,45 +236,8 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us - Dark */}
-      <section className="section-padding bg-gradient-to-br from-black via-blue-900 to-black animate-fade-in-up">
-        <div className="container-clean">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Why Choose Closed Loop?
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="bg-gray-900 rounded-xl p-8 border border-blue-800 hover:border-blue-400 transition-all duration-300 animate-fade-in">
-                <h3 className="text-xl font-bold text-blue-200 mb-4">A Curated Network of Top-Tier Talent</h3>
-                <p className="text-blue-100">
-                  We handpick and represent some of the most dynamic and diverse talent in the entertainment industry, from chart-topping musicians and electrifying emcees to skilled dancers and high-energy DJs.
-                </p>
-              </div>
-              <div className="bg-gray-900 rounded-xl p-8 border border-blue-800 hover:border-blue-400 transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <h3 className="text-xl font-bold text-blue-200 mb-4">Hands-On Experience Across Diverse Event Types</h3>
-                <p className="text-blue-100">
-                  Our team brings years of real-world experience in organising and managing a wide spectrum of events, from intimate gatherings to large-scale corporate events and public concerts.
-                </p>
-              </div>
-            </div>
-            <div className="space-y-8">
-              <div className="bg-gray-900 rounded-xl p-8 border border-blue-800 hover:border-blue-400 transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <h3 className="text-xl font-bold text-blue-200 mb-4">One-Stop Destination</h3>
-                <p className="text-blue-100">
-                  ClosedLoop offers a complete ecosystem for entertainment and event services under one roof. You don't need to juggle multiple vendors.
-                </p>
-              </div>
-              <div className="bg-gray-900 rounded-xl p-8 border border-blue-800 hover:border-blue-400 transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <h3 className="text-xl font-bold text-blue-200 mb-4">A Passionate Team</h3>
-                <p className="text-blue-100">
-                  We're not just planners, we're creators. Our team is made up of passionate individuals who thrive on creativity, collaboration, and delivering extraordinary experiences.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhyChooseClosedLoop />
+
 
       <Footer />
     </div>

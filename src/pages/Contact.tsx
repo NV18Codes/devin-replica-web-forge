@@ -49,7 +49,7 @@ const Contact = () => {
       <Header />
 
       {/* Hero Section - Dark */}
-      <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-black via-blue-900 to-black animate-fade-in-up">
+      <section className="relative pt-32 pb-24 overflow-hidden bg-[#0a1f44]/95 text-white animate-fade-in-up">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 font-inter">
             Get In <span className="text-blue-500">Touch</span>

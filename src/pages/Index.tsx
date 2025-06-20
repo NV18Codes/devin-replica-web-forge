@@ -126,7 +126,7 @@ const Index = () => {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl mb-4 drop-shadow-lg font-thin text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-100">
-                ClosedLoop
+                Closed Loop
               </span>
             </h1>
 

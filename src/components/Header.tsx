@@ -20,7 +20,7 @@ const Header = () => {
           {/* Logo Section */}
           <div className="flex items-center space-x-1">
             <img
-              src="src/Blue Logo no bg.png"
+              src="src\Blue Logo no bg.png"
               alt="ClosedLoop Logo"
               className="h-14 w-60 object-contain"
             />
